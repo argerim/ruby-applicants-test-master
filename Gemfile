@@ -25,6 +25,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'database_cleaner'
+  gem 'clockwork-test'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
