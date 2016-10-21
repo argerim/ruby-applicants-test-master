@@ -4,7 +4,7 @@ class ModelsController < ApplicationController
     uri = URI("http://www.webmotors.com.br/carro/modelos")
 
     # Make request for Webmotors site
-    make = Make.where(webmotors_id: params[:webmotors_make_id])[0]
+    make = Brand.where(webmotors_code: params[:webmotors_make_id])[0]
 
     response = Net::HTTP.post_form(uri, { marca: params[:webmotors_make_id] })
     models_json = JSON.parse response.body
@@ -13,9 +13,7 @@ class ModelsController < ApplicationController
 
     # Itera no resultado e grava os modelos que ainda não estão persistidas
     models_json.each do |json|
-      if Model.where(name: json["Nome"], make_id: make.id).size == 0
-        Model.create(make_id: make.id, name: json["Nome"])
-      end
+      CarModel.create(brand_id: make.id, name: json["Nome"])
     end
   end
 end

@@ -1,5 +1,5 @@
-<% make = Make.where(webmotors_id: params[:webmotors_make_id])[0] %>
-<% models = Model.where(make_id: make.id) %>
+<% make = Brand.where(webmotors_code: params[:webmotors_make_id])[0] %>
+<% models = CarModel.where(brand_id: make.id) %>
 
 <div class="container-fluid form-signin">
   <div class="row">

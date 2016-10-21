@@ -1,10 +1,10 @@
-<% makes = Make.all %>
+<% makes = Brand.all %>
 
 <form action="/models" method="GET" class="form-signin">
   <h2 class="form-signin-heading">Escolha a Fabricante</h2>
     <select name="webmotors_make_id" class="form-control">
       <% makes.each do |make| %>
-        <option value="<%= make.webmotors_id %>"><%= make.name %></option>
+        <option value="<%= make.webmotors_code %>"><%= make.name %></option>
       <% end %>
     </select>
   </p>
