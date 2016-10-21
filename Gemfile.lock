@@ -59,6 +59,9 @@ GEM
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
+    clockwork (2.0.0)
+      activesupport
+      tzinfo
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
     crack (0.4.3)
@@ -229,6 +232,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
+  clockwork
   database_cleaner
   factory_girl_rails
   jquery-rails
