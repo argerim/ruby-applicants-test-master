@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/" => "home#index"
+  resources :car_models, only: :index
 
-  get "/models" => "models#index"
+  root "home#index"
 end

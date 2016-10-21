@@ -1,4 +1,4 @@
-class ModelsController < ApplicationController
+class CarModelsController < ApplicationController
   def index
     #search the models
     uri = URI("http://www.webmotors.com.br/carro/modelos")
