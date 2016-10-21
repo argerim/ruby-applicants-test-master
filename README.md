@@ -39,7 +39,7 @@ A principio é cabivel colocar um nivel de cache na aplicação para evitar tant
 Não é algo de outro mundo, mas por ser somente um teste, gostaria de deixar claro que é possivel implementar.
 A aplicação segue o fluxo determinado antes das minhas modificações, seleciona o fabrincate e logo em seguinda a exibiçao dos modelos.
 
-Todo o fluxo de popular e atualizar as tabelas foi colocado em background com um tempo de 5 em 5 minutos, podendo ser mudando facilmente no arquivo config/clockwork.rb.
+Todo o fluxo de popular e atualizar as tabelas foi colocado em background com um tempo de 10 em 10 minutos, podendo ser mudando facilmente no arquivo config/clockwork.rb.
 Optei por isso por verificar no desenvolvimento que os dados não atualizavam com frequencia.
 
 ##Para executar o sistema faça as seguintes instruções:

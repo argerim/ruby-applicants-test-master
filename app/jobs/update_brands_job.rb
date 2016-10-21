@@ -1,4 +1,4 @@
-class UpdateBrandsAndCarModelsJob < ActiveJob::Base
+class UpdateBrandsJob < ActiveJob::Base
   queue_as :default
 
   def perform

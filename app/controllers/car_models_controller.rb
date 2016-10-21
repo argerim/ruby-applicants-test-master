@@ -2,6 +2,7 @@ class CarModelsController < ApplicationController
   before_action :brand, only: :index
 
   def index
+    UpdateCarModelByBrandJob.perform_later(@brand.id) if @brand.present?
     @car_models = @brand.car_models
   end
 
