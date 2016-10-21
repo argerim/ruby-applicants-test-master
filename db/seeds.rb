@@ -1,0 +1,2 @@
+#populate tables Brands and CarModels
+UpdateBrandsAndCarModelsJob.perform_later
