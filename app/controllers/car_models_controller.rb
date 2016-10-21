@@ -2,9 +2,7 @@ class CarModelsController < ApplicationController
   before_action :brand, only: :index
 
   def index
-    WebMotorsService.new(:car_model, { marca: permited_params[:code] }).json_parse.each do |json|
-      @brand.car_models.create(name: json["Nome"])
-    end
+    UpdateCarModelsByBrand.new(@brand)
 
     @car_models = @brand.car_models
   end
