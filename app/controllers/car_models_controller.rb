@@ -2,12 +2,7 @@ class CarModelsController < ApplicationController
   before_action :brand, only: :index
 
   def index
-    uri = URI("http://www.webmotors.com.br/carro/modelos")
-
-    response = Net::HTTP.post_form(uri, { marca: permited_params[:code] })
-    models_json = JSON.parse response.body
-
-    models_json.each do |json|
+    WebMotorsService.new(:car_model, { marca: permited_params[:code] }).json_parse.each do |json|
       @brand.car_models.create(name: json["Nome"])
     end
 
