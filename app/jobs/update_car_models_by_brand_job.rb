@@ -1,4 +1,4 @@
-class UpdateCarModelByBrandJob < ActiveJob::Base
+class UpdateCarModelsByBrandJob < ActiveJob::Base
   queue_as :default
 
   def perform(brand_id)
