@@ -2,8 +2,6 @@ class CarModelsController < ApplicationController
   before_action :brand, only: :index
 
   def index
-    UpdateCarModelsByBrand.new(@brand)
-
     @car_models = @brand.car_models
   end
 
