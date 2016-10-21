@@ -1,14 +1,13 @@
 <% makes = Make.all %>
 
-<form action="/models" method="GET">
-  <p>
-    <label>Escolha a Fabricante:</label>
-    <select name="webmotors_make_id">
+<form action="/models" method="GET" class="form-signin">
+  <h2 class="form-signin-heading">Escolha a Fabricante</h2>
+    <select name="webmotors_make_id" class="form-control">
       <% makes.each do |make| %>
         <option value="<%= make.webmotors_id %>"><%= make.name %></option>
       <% end %>
     </select>
   </p>
 
-  <input type="submit" value="Buscar modelos">
+  <input type="submit" value="Buscar modelos" class="btn btn-lg btn-primary btn-block">
 </form>
