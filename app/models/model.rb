@@ -1,2 +1,2 @@
-class Model < ActiveRecord::Base
+class Model < ApplicationRecord
 end

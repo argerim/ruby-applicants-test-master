@@ -1,2 +1,2 @@
-class Make < ActiveRecord::Base
+class Make < ApplicationRecord
 end
