@@ -12,3 +12,4 @@ Sidekiq.configure_server do |config|
 end
 
 SidekiqUniqueJobs.config.unique_args_enabled = true
+Sidekiq.default_worker_options = { retry: 0 }
