@@ -1,13 +1,10 @@
-<% make = Brand.where(webmotors_code: params[:webmotors_make_id])[0] %>
-<% models = CarModel.where(brand_id: make.id) %>
-
 <div class="container-fluid form-signin">
   <div class="row">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <%= link_to "<< Voltar", :back %>
-      <h2 class="sub-header"><%= make.name%></h2>
-      <% models.each do |model| %>
-        <span class="label label-default"><%= model.name %></span>
+      <h2 class="sub-header"><%= @brand.name%></h2>
+      <% @car_models.each do |car_model| %>
+        <span class="label label-default"><%= car_model.name %></span>
       <% end %>
     </div>
   </div>
