@@ -60,6 +60,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.5.3)
@@ -106,6 +107,8 @@ GEM
       websocket-driver (>= 0.2.0)
     puma (3.6.0)
     rack (2.0.1)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
@@ -137,6 +140,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    redis (3.3.1)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -173,6 +177,16 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sidekiq (4.2.2)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (~> 1.5)
+      redis (~> 3.2, >= 3.2.1)
+    sidekiq-unique-jobs (4.0.18)
+      sidekiq (>= 2.6)
+      thor
+    sinatra (1.0)
+      rack (>= 1.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -222,11 +236,15 @@ DEPENDENCIES
   poltergeist
   puma
   rails (= 5.0.0.1)
+  redis
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0, >= 5.0.6)
   sdoc (~> 0.4.0)
   selenium-webdriver
   shoulda-matchers
+  sidekiq
+  sidekiq-unique-jobs
+  sinatra
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
