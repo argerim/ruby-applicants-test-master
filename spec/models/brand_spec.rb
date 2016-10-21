@@ -4,7 +4,6 @@ RSpec.describe Brand, type: :model do
 
   subject { create(:brand) }
 
-
   context 'Validations' do
     [:name].each do |attr|
       it { should validate_uniqueness_of(attr).case_insensitive  }
@@ -14,6 +13,12 @@ RSpec.describe Brand, type: :model do
     end
     [:name, :webmotors_code].each do |attr|
       it { should validate_presence_of(attr) }
+    end
+  end
+
+  context 'Associations' do
+    [:car_models].each do |asso|
+      it { should have_many(asso) }
     end
   end
 end
