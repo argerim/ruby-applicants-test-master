@@ -39,10 +39,15 @@ A principio é cabivel colocar um nivel de cache na aplicação para evitar tant
 Não é algo de outro mundo, mas por ser somente um teste, gostaria de deixar claro que é possivel implementar.
 A aplicação segue o fluxo determinado antes das minhas modificações, seleciona o fabrincate e logo em seguinda a exibiçao dos modelos.
 
-##Para executar o sistema faça as seguintes alteraçoẽs:
+Todo o fluxo de popular e atualizar as tabelas foi colocado em background com um tempo de 5 em 5 minutos, podendo ser mudando facilmente no arquivo config/clockwork.rb.
+Optei por isso por verificar no desenvolvimento que os dados não atualizavam com frequencia.
+
+##Para executar o sistema faça as seguintes instruções:
 - adicionar/modificar o arquivo config/database.yml para o banco Postgresql
 - rails db:create
 - rails db:migrate
+- bundle exec sidekiq -C config/sidekiq.yml
+- bundle exec clockwork config/clockwork.rb
 - rails s
 - abrir browser e colocar na barra de endereços: http://localhost:3000
 
