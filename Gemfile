@@ -22,6 +22,8 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
